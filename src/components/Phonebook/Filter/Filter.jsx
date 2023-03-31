@@ -1,15 +1,20 @@
-import PropTypes from 'prop-types';
 import { Contanier, Input } from './Filter.style';
 
+import { useDispatch } from "react-redux";
+import { setFilter } from 'redux/filterSlice';
 
-export const Filter = ({ handleFilter, valueFilter }) => {
+export const Filter = () => {
+  const dispatch = useDispatch();
+  const onChange = event => {
+      const filtered = event.target.value;
+      dispatch(setFilter(filtered));
+  };
   return (
     <Contanier>
       <label htmlFor="">Find contacts by name</label>
       <Input
         name="filter"
-        onChange={handleFilter}
-        value={valueFilter}
+        onChange={onChange}
         type="text"
         placeholder="Сontact search ..."
       />
@@ -18,6 +23,4 @@ export const Filter = ({ handleFilter, valueFilter }) => {
 };
 
 
-Filter.propTypes = {
-  handleFilter: PropTypes.func.isRequired,
-};
+
