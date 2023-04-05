@@ -2,9 +2,9 @@
 import { GlobalStyle } from "./GlobalStyle";
 import { Layout } from "./Layout/Layout";
 
-import { Filter } from "./Phonebook/Filter/Filter";
-import {PhoneForm} from "./Phonebook/PhoneForm";
-import { PhoneList } from "./Phonebook/PhoneList/PhoneList";
+import { Filter } from "./Filter/Filter";
+import {PhoneForm} from "./PhoneForm/PhoneForm";
+import { PhoneList } from "./PhoneList/PhoneList";
 import {Phonebook, Contacts} from './App.style'
 
 import { getContacts } from 'redux/selectors';
